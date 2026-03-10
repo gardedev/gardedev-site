@@ -1,0 +1,644 @@
+---
+import '../styles/global.css';
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Custom software, web & mobile solutions for ambitious businesses. MBE Certified." />
+  <title>GardeDev — We Build Things That Work</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #fff; color: #0a0a0a; }
+
+    /* Dot grid */
+    .dot-grid {
+      background-image: radial-gradient(circle, #d4d4d8 1px, transparent 1px);
+      background-size: 26px 26px;
+    }
+
+    /* ===== NAV ===== */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 2px solid #002395;
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px;
+    }
+    .nav-logo img { height: 34px; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: #0a0a0a; font-weight: 500; font-size: 0.9rem; transition: color 0.2s; }
+    .nav-links a:hover { color: #002395; }
+    .nav-cta {
+      background: #002395; color: #fff; padding: 0.5rem 1.25rem;
+      border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.875rem;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: #001a70; }
+    .nav-mobile-btn { display: none; background: none; border: none; cursor: pointer; }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative; overflow: hidden;
+      min-height: 88vh;
+      display: flex; align-items: center;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 1200px; margin: 0 auto; padding: 5rem 2rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: #EEF2FF; color: #002395; border: 1px solid #c7d2fe;
+      padding: 0.35rem 0.85rem; border-radius: 100px;
+      font-size: 0.8rem; font-weight: 600; margin-bottom: 1.5rem;
+    }
+    .hero-badge span { width: 6px; height: 6px; background: #002395; border-radius: 50%; display: inline-block; }
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 900; line-height: 1.1;
+      letter-spacing: -0.03em; color: #0a0a0a;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 .underline-accent {
+      position: relative; display: inline-block;
+    }
+    .hero h1 .underline-accent::after {
+      content: '';
+      position: absolute; left: 0; bottom: -6px;
+      width: 100%; height: 4px;
+      background: #ED2939; border-radius: 2px;
+    }
+    .hero-sub {
+      font-size: 1.15rem; color: #52525b; line-height: 1.7; margin-bottom: 2.5rem;
+      max-width: 480px;
+    }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      background: #002395; color: #fff;
+      padding: 0.85rem 2rem; border-radius: 8px;
+      font-weight: 700; font-size: 1rem; text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: #001a70; transform: translateY(-1px); }
+    .btn-outline {
+      border: 2px solid #ED2939; color: #ED2939;
+      padding: 0.85rem 2rem; border-radius: 8px;
+      font-weight: 700; font-size: 1rem; text-decoration: none;
+      transition: all 0.2s; display: inline-block;
+    }
+    .btn-outline:hover { background: #ED2939; color: #fff; transform: translateY(-1px); }
+
+    /* Hero art panel */
+    .hero-art { display: flex; align-items: center; justify-content: center; }
+
+    /* ===== SECTION SHARED ===== */
+    section { padding: 5rem 2rem; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: #ED2939; margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 800; color: #0a0a0a; line-height: 1.2;
+      margin-bottom: 1rem; letter-spacing: -0.02em;
+    }
+    .section-sub { font-size: 1.05rem; color: #52525b; max-width: 560px; line-height: 1.65; }
+
+    /* ===== SERVICES ===== */
+    .services { background: #f9f9fb; }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .service-card {
+      background: #fff; border-radius: 12px;
+      border-top: 4px solid #002395;
+      padding: 1.75rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,35,149,0.1); }
+    .service-icon {
+      width: 48px; height: 48px; border-radius: 10px;
+      background: #EEF2FF; display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+    .service-icon svg { width: 24px; height: 24px; color: #002395; }
+    .service-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.6rem; }
+    .service-card p { font-size: 0.9rem; color: #52525b; line-height: 1.6; }
+
+    /* ===== STATS ===== */
+    .stats { background: #fff; border-top: 1px solid #e4e4e7; border-bottom: 1px solid #e4e4e7; }
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;
+    }
+    .stat-item { text-align: center; padding: 1rem 0; }
+    .stat-number {
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
+      font-weight: 900; color: #002395;
+      letter-spacing: -0.03em; line-height: 1;
+    }
+    .stat-suffix { color: #ED2939; }
+    .stat-label { font-size: 0.9rem; color: #52525b; margin-top: 0.4rem; font-weight: 500; }
+
+    /* ===== WORK ===== */
+    .work { background: #f9f9fb; }
+    .work-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .work-card {
+      background: #fff; border-radius: 12px; padding: 1.75rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none; color: inherit; display: block;
+      border-left: 4px solid transparent;
+    }
+    .work-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,35,149,0.1); border-left-color: #ED2939; }
+    .work-card-name { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: #0a0a0a; }
+    .work-card-desc { font-size: 0.875rem; color: #52525b; line-height: 1.55; margin-bottom: 1rem; }
+    .work-card-link {
+      font-size: 0.8rem; font-weight: 600; color: #002395;
+      display: inline-flex; align-items: center; gap: 0.35rem;
+    }
+    .work-tag {
+      display: inline-block; background: #EEF2FF; color: #002395;
+      font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.6rem;
+      border-radius: 100px; margin-right: 0.4rem; margin-bottom: 0.75rem;
+    }
+
+    /* ===== TEAM ===== */
+    .team { background: #fff; }
+    .team-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem; margin-top: 3rem;
+    }
+    .team-card { text-align: center; }
+    .team-avatar {
+      width: 100px; height: 100px; border-radius: 50%;
+      margin: 0 auto 1.25rem;
+      position: relative; overflow: hidden;
+    }
+    .team-name { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .team-title { font-size: 0.875rem; color: #ED2939; font-weight: 600; margin-bottom: 0.75rem; }
+    .team-bio { font-size: 0.875rem; color: #52525b; line-height: 1.6; max-width: 260px; margin: 0 auto; }
+
+    /* ===== CONTACT ===== */
+    .contact { background: #f9f9fb; }
+    .contact-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;
+    }
+    .contact-form { background: #fff; padding: 2.5rem; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label { display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: 0.4rem; color: #0a0a0a; }
+    .form-group input, .form-group textarea {
+      width: 100%; padding: 0.75rem 1rem; border: 1.5px solid #e4e4e7;
+      border-radius: 8px; font-size: 0.95rem; font-family: inherit;
+      transition: border-color 0.2s; outline: none; resize: vertical;
+    }
+    .form-group input:focus, .form-group textarea:focus { border-color: #002395; }
+    .form-submit {
+      width: 100%; background: #002395; color: #fff;
+      padding: 0.9rem; border: none; border-radius: 8px;
+      font-size: 1rem; font-weight: 700; cursor: pointer;
+      transition: background 0.2s; font-family: inherit;
+    }
+    .form-submit:hover { background: #001a70; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #002395; color: #fff;
+      padding: 3rem 2rem;
+    }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1.5rem;
+    }
+    .footer-logo img { height: 28px; filter: brightness(0) invert(1); }
+    .footer-links { display: flex; gap: 2rem; }
+    .footer-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.875rem; transition: color 0.2s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.55); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .hero-content { grid-template-columns: 1fr; }
+      .hero-art { display: none; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-inner { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .nav-mobile-btn { display: block; }
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="/logo.png" alt="GardeDev" />
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Let's Talk</a>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero dot-grid">
+  <!-- Abstract background SVG art -->
+  <div class="hero-bg">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+      <defs>
+        <style>
+          .node { fill: none; stroke: #002395; stroke-width: 1.5; opacity: 0.12; }
+          .node-dot { fill: #002395; opacity: 0.15; }
+          .line { stroke: #002395; stroke-width: 1; opacity: 0.08; }
+          .code { fill: #002395; opacity: 0.07; font-family: monospace; font-size: 13px; }
+          .red-accent { stroke: #ED2939; stroke-width: 1.5; opacity: 0.09; fill: none; }
+          .red-dot { fill: #ED2939; opacity: 0.12; }
+          @keyframes float1 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+          @keyframes float2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)} }
+          .anim1 { animation: float1 6s ease-in-out infinite; }
+          .anim2 { animation: float2 8s ease-in-out infinite; }
+        </style>
+      </defs>
+
+      <!-- Network nodes - left cluster -->
+      <g class="anim1">
+        <circle cx="80" cy="180" r="6" class="node-dot"/>
+        <circle cx="80" cy="180" r="18" class="node"/>
+        <circle cx="160" cy="120" r="5" class="node-dot"/>
+        <circle cx="160" cy="120" r="14" class="node"/>
+        <circle cx="200" cy="260" r="4" class="node-dot"/>
+        <line x1="80" y1="180" x2="160" y2="120" class="line"/>
+        <line x1="80" y1="180" x2="200" y2="260" class="line"/>
+        <line x1="160" y1="120" x2="200" y2="260" class="line"/>
+      </g>
+
+      <!-- Network nodes - right cluster -->
+      <g class="anim2" style="transform-origin: 900px 300px">
+        <circle cx="860" cy="200" r="7" class="node-dot"/>
+        <circle cx="860" cy="200" r="20" class="node"/>
+        <circle cx="940" cy="140" r="5" class="node-dot"/>
+        <circle cx="940" cy="140" r="15" class="node"/>
+        <circle cx="920" cy="300" r="4" class="node-dot"/>
+        <line x1="860" y1="200" x2="940" y2="140" class="line"/>
+        <line x1="860" y1="200" x2="920" y2="300" class="line"/>
+        <line x1="940" y1="140" x2="920" y2="300" class="line"/>
+      </g>
+
+      <!-- Code snippets -->
+      <text x="60" y="360" class="code">{"{"} api: 'v2' {"}"}</text>
+      <text x="700" y="80" class="code">const data = fetch()</text>
+      <text x="820" y="460" class="code">SELECT * FROM clients</text>
+      <text x="40" y="500" class="code">npm run build</text>
+      <text x="300" y="60" class="code">{"<Component />"}</text>
+      <text x="550" y="520" class="code">{"// MBE Certified"}</text>
+
+      <!-- Hexagons -->
+      <polygon points="750,150 780,135 810,150 810,180 780,195 750,180" class="red-accent"/>
+      <polygon points="120,400 145,387 170,400 170,426 145,439 120,426" class="red-accent"/>
+      <polygon points="600,80 622,68 644,80 644,104 622,116 600,104" class="node" style="opacity:0.1"/>
+
+      <!-- Circuit traces -->
+      <path d="M 300 500 L 300 450 L 360 450 L 360 420 L 420 420" class="red-accent"/>
+      <path d="M 700 400 L 740 400 L 740 350 L 800 350" class="line" style="opacity:0.12"/>
+      <circle cx="420" cy="420" r="4" class="red-dot"/>
+      <circle cx="800" cy="350" r="3" class="red-dot"/>
+      <circle cx="300" cy="500" r="3" class="node-dot"/>
+
+      <!-- Binary stream -->
+      <text x="520" y="200" class="code" style="opacity:0.05;font-size:11px">01001101 10110010 00111001</text>
+      <text x="50" y="280" class="code" style="opacity:0.05;font-size:11px">10110010 01001101</text>
+
+      <!-- Large subtle circle -->
+      <circle cx="500" cy="300" r="280" class="node" style="opacity:0.04; stroke-width:1;"/>
+      <circle cx="500" cy="300" r="200" class="red-accent" style="opacity:0.04; stroke-width:1;"/>
+
+      <!-- Dots scattered -->
+      <circle cx="450" cy="100" r="3" class="node-dot"/>
+      <circle cx="580" cy="460" r="2.5" class="red-dot"/>
+      <circle cx="220" cy="80" r="2" class="node-dot"/>
+      <circle cx="680" cy="520" r="3" class="node-dot"/>
+    </svg>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge">
+        <span></span> MBE Certified Company
+      </div>
+      <h1>
+        We build things<br/>
+        that <span class="underline-accent">work</span>.
+      </h1>
+      <p class="hero-sub">
+        Custom software, web &amp; mobile solutions for ambitious businesses.
+        From idea to launch — we deliver.
+      </p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">Let's Talk</a>
+        <a href="#work" class="btn-outline">View Our Work</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <svg viewBox="0 0 400 400" width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+        <!-- Main geometric art composition -->
+        <defs>
+          <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#002395;stop-opacity:0.9"/>
+            <stop offset="100%" style="stop-color:#3b5bdb;stop-opacity:0.7"/>
+          </linearGradient>
+          <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#ED2939;stop-opacity:0.85"/>
+            <stop offset="100%" style="stop-color:#f87171;stop-opacity:0.6"/>
+          </linearGradient>
+          <linearGradient id="grayGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#e4e4e7;stop-opacity:1"/>
+            <stop offset="100%" style="stop-color:#f4f4f5;stop-opacity:1"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Background circle -->
+        <circle cx="200" cy="200" r="180" fill="#f4f4f5" opacity="0.6"/>
+
+        <!-- Large blue triangle -->
+        <polygon points="60,320 200,60 340,320" fill="url(#blueGrad)" opacity="0.85"/>
+
+        <!-- Red overlapping triangle -->
+        <polygon points="100,340 280,120 360,340" fill="url(#redGrad)" opacity="0.6"/>
+
+        <!-- Light overlapping polygon -->
+        <polygon points="140,280 200,100 320,200 280,330 160,340" fill="white" opacity="0.5"/>
+
+        <!-- Network nodes on art -->
+        <circle cx="200" cy="60" r="10" fill="#002395" opacity="0.9"/>
+        <circle cx="60" cy="320" r="8" fill="#002395" opacity="0.9"/>
+        <circle cx="340" cy="320" r="8" fill="#ED2939" opacity="0.9"/>
+        <circle cx="200" cy="200" r="12" fill="white" opacity="1"/>
+        <circle cx="200" cy="200" r="6" fill="#002395" opacity="1"/>
+
+        <!-- Connecting lines -->
+        <line x1="200" y1="60" x2="200" y2="200" stroke="white" stroke-width="1.5" opacity="0.6"/>
+        <line x1="60" y1="320" x2="200" y2="200" stroke="white" stroke-width="1.5" opacity="0.6"/>
+        <line x1="340" y1="320" x2="200" y2="200" stroke="white" stroke-width="1.5" opacity="0.6"/>
+
+        <!-- Code bracket decorations -->
+        <text x="30" y="180" font-family="monospace" font-size="28" fill="#002395" opacity="0.3">{"{"}</text>
+        <text x="345" y="180" font-family="monospace" font-size="28" fill="#ED2939" opacity="0.3">{"}"}</text>
+        <text x="160" y="390" font-family="monospace" font-size="14" fill="#52525b" opacity="0.4">{"// gardedev.com"}</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="services" id="services">
+  <div class="section-inner">
+    <p class="section-label">What We Do</p>
+    <h2 class="section-title">End-to-end solutions<br/>built to scale</h2>
+    <p class="section-sub">We handle the full stack — strategy, design, development, and delivery. No hand-offs, no excuses.</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+          </svg>
+        </div>
+        <h3>Enterprise Software</h3>
+        <p>Custom applications built for complex business workflows. Scalable, secure, and built to last.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+        </div>
+        <h3>E-Commerce Websites</h3>
+        <p>High-converting online stores designed to move product. From Shopify builds to fully custom platforms.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+          </svg>
+        </div>
+        <h3>API &amp; EDI Integrations</h3>
+        <p>Connect your systems. We build clean, reliable integrations that keep your data flowing in real time.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+          </svg>
+        </div>
+        <h3>Mobile &amp; Web Apps</h3>
+        <p>Cross-platform apps that users love. Native performance, modern design, shipped on time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section class="stats">
+  <div class="section-inner">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">10<span class="stat-suffix">+</span></div>
+        <div class="stat-label">Years of Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number"><span style="font-size:0.65em;vertical-align:middle">$</span>2M<span class="stat-suffix">+</span></div>
+        <div class="stat-label">Revenue Generated for Clients</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">20<span class="stat-suffix">+</span></div>
+        <div class="stat-label">Technologies We Work With</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">98<span class="stat-suffix">%</span></div>
+        <div class="stat-label">Job Success Rate</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WORK ===== -->
+<section class="work" id="work">
+  <div class="section-inner">
+    <p class="section-label">Notable Clients</p>
+    <h2 class="section-title">Work we're proud of</h2>
+    <p class="section-sub">From grocery retail to iconic New York institutions — we've delivered for brands that demand the best.</p>
+
+    <div class="work-grid">
+      <a href="https://www.fairwaymarket.com" target="_blank" rel="noopener" class="work-card">
+        <span class="work-tag">E-Commerce</span><span class="work-tag">Retail</span>
+        <div class="work-card-name">Fairway Market</div>
+        <div class="work-card-desc">Custom e-commerce and online ordering platform for one of New York's most beloved grocery brands.</div>
+        <span class="work-card-link">View project →</span>
+      </a>
+      <a href="https://saintpatrickscathedral.org" target="_blank" rel="noopener" class="work-card">
+        <span class="work-tag">Web</span><span class="work-tag">CMS</span>
+        <div class="work-card-name">Saint Patrick's Cathedral</div>
+        <div class="work-card-desc">Digital presence for one of America's most iconic landmarks. Elegant, accessible, and built to scale.</div>
+        <span class="work-card-link">View project →</span>
+      </a>
+      <a href="https://www.logoup.com" target="_blank" rel="noopener" class="work-card">
+        <span class="work-tag">E-Commerce</span><span class="work-tag">Platform</span>
+        <div class="work-card-name">LogoUp</div>
+        <div class="work-card-desc">Full-stack e-commerce and fulfillment platform for a leading promotional products company.</div>
+        <span class="work-card-link">View project →</span>
+      </a>
+      <a href="https://www.alldayshirts.com" target="_blank" rel="noopener" class="work-card">
+        <span class="work-tag">E-Commerce</span><span class="work-tag">Custom Dev</span>
+        <div class="work-card-name">AllDayShirts</div>
+        <div class="work-card-desc">End-to-end custom apparel platform with real-time product customization and order management.</div>
+        <span class="work-card-link">View project →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TEAM ===== -->
+<section class="team" id="team">
+  <div class="section-inner">
+    <p class="section-label">Our Team</p>
+    <h2 class="section-title">The people behind the work</h2>
+    <p class="section-sub">A small, focused team of engineers, designers, and strategists — with big company experience.</p>
+
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">
+          <svg viewBox="0 0 100 100" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="50" fill="#EEF2FF"/>
+            <polygon points="50,15 85,70 15,70" fill="#002395" opacity="0.85"/>
+            <circle cx="50" cy="45" r="12" fill="white"/>
+            <circle cx="50" cy="45" r="6" fill="#002395"/>
+            <rect x="28" y="68" width="44" height="6" rx="3" fill="#002395" opacity="0.3"/>
+          </svg>
+        </div>
+        <div class="team-name">Lead Engineer</div>
+        <div class="team-title">Full-Stack Development</div>
+        <p class="team-bio">10+ years building enterprise software and e-commerce platforms for clients across multiple industries.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">
+          <svg viewBox="0 0 100 100" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="50" fill="#FEF2F2"/>
+            <rect x="20" y="25" width="60" height="50" rx="4" fill="#ED2939" opacity="0.8"/>
+            <circle cx="50" cy="42" r="12" fill="white"/>
+            <circle cx="50" cy="42" r="6" fill="#ED2939"/>
+            <rect x="25" y="62" width="50" height="5" rx="2.5" fill="white" opacity="0.5"/>
+          </svg>
+        </div>
+        <div class="team-name">UX Architect</div>
+        <div class="team-title">Design &amp; Experience</div>
+        <p class="team-bio">Designs interfaces that convert. Specializes in complex user flows made simple and beautiful.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">
+          <svg viewBox="0 0 100 100" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="50" fill="#F0FDF4"/>
+            <polygon points="50,20 80,45 70,80 30,80 20,45" fill="#16a34a" opacity="0.75"/>
+            <circle cx="50" cy="47" r="12" fill="white"/>
+            <circle cx="50" cy="47" r="6" fill="#16a34a"/>
+            <line x1="30" y1="70" x2="70" y2="70" stroke="white" stroke-width="4" opacity="0.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="team-name">Solutions Consultant</div>
+        <div class="team-title">Strategy &amp; Integrations</div>
+        <p class="team-bio">Translates complex business requirements into clean technical solutions. API and EDI specialist.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact" id="contact">
+  <div class="section-inner">
+    <div class="contact-inner">
+      <div>
+        <p class="section-label">Get In Touch</p>
+        <h2 class="section-title">Let's build something great</h2>
+        <p class="section-sub" style="margin-bottom:2rem">Have a project in mind? We'd love to hear about it. Drop us a message and we'll get back to you within 24 hours.</p>
+        <div style="display:flex;flex-direction:column;gap:1rem">
+          <div style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;color:#52525b">
+            <div style="width:36px;height:36px;background:#EEF2FF;border-radius:8px;display:flex;align-items:center;justify-content:center">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#002395" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            hello@gardedev.com
+          </div>
+          <div style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;color:#52525b">
+            <div style="width:36px;height:36px;background:#EEF2FF;border-radius:8px;display:flex;align-items:center;justify-content:center">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#002395" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            Queens, New York
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <form action="https://formspree.io/f/placeholder" method="POST">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="John Smith" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="john@company.com" required />
+          </div>
+          <div class="form-group">
+            <label for="project">Project Type</label>
+            <input type="text" id="project" name="project" placeholder="e.g. E-Commerce Site, Mobile App" />
+          </div>
+          <div class="form-group">
+            <label for="message">Tell us about your project</label>
+            <textarea id="message" name="message" rows="5" placeholder="What are you building? What's your timeline?" required></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="/logo.png" alt="GardeDev" />
+    </div>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#team">Team</a>
+      <a href="#contact">Contact</a>
+      <a href="/privacy">Privacy Policy</a>
+    </div>
+    <div class="footer-copy">© 2024 GardeDev LLC. All rights reserved. MBE Certified.</div>
+  </div>
+</footer>
+
+</body>
+</html>

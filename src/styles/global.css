@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --color-blue: #002395;
+  --color-red: #ED2939;
+  --color-navy: #0a0f1e;
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #ffffff;
+  color: #0a0a0a;
+}
+
+.dot-grid {
+  background-image: radial-gradient(circle, #c0c0c0 1px, transparent 1px);
+  background-size: 28px 28px;
+}
