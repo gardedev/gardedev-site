@@ -5,25 +5,25 @@ import '../styles/global.css';
 
 <Layout>
   <!-- NAV -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b-2 border-[#002395]">
+  <header class="fixed top-0 left-0 right-0 z-50 bg-[#001a6e] shadow-lg">
     <nav class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
       <a href="/" class="flex items-center shrink-0">
-        <img src="/logo-color.png" alt="GardeDev" class="h-10 sm:h-12 w-auto" style="max-width:180px;object-fit:contain;" />
+        <img src="/logo-original.png" alt="GardeDev" class="h-8 sm:h-10 w-auto" />
       </a>
       <div class="hidden md:flex items-center gap-8">
-        <a href="#services" class="nav-link">Services</a>
-        <a href="#work" class="nav-link">Work</a>
-        <a href="#about" class="nav-link">About</a>
+        <a href="#services" class="nav-link-dark">Services</a>
+        <a href="#work" class="nav-link-dark">Work</a>
+        <a href="#about" class="nav-link-dark">About</a>
         <a href="#contact" class="btn-primary text-sm py-2 px-5">Let's Talk</a>
       </div>
-      <button id="menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 shrink-0" aria-label="Menu">
-        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <button id="menu-btn" class="md:hidden p-2 rounded-lg hover:bg-blue-800 shrink-0" aria-label="Menu">
+        <svg width="24" height="24" fill="none" stroke="white" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </nav>
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 py-4 flex flex-col gap-3">
-      <a href="#services" class="nav-link py-3 border-b border-gray-100 text-base font-medium">Services</a>
-      <a href="#work" class="nav-link py-3 border-b border-gray-100 text-base font-medium">Work</a>
-      <a href="#about" class="nav-link py-3 border-b border-gray-100 text-base font-medium">About</a>
+    <div id="mobile-menu" class="hidden md:hidden bg-[#001a6e] border-t border-blue-800 px-4 py-4 flex flex-col gap-3">
+      <a href="#services" class="nav-link-dark py-3 border-b border-blue-800 text-base font-medium">Services</a>
+      <a href="#work" class="nav-link-dark py-3 border-b border-blue-800 text-base font-medium">Work</a>
+      <a href="#about" class="nav-link-dark py-3 border-b border-blue-800 text-base font-medium">About</a>
       <a href="#contact" class="btn-primary text-center justify-center mt-2">Let's Talk</a>
     </div>
   </header>
@@ -50,9 +50,10 @@ import '../styles/global.css';
             <svg width="14" height="14" fill="#002395" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
             MBE Certified Company
           </div>
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight mb-2 text-gray-950">Empowering your business</h1>
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight mb-6 text-[#002395]">
-            with cutting-edge <span class="relative inline-block">AI Solutions.<span class="absolute bottom-0 left-0 right-0 h-1.5 bg-[#ED2939] rounded"></span></span>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.1] mb-6 text-gray-950">
+            Empowering your<br/>
+            <span class="text-[#002395]">business</span> with<br/>
+            <span class="relative inline-block text-[#002395]">cutting-edge AI.<span class="absolute -bottom-1 left-0 right-0 h-1.5 bg-[#ED2939] rounded"></span></span>
           </h1>
           <p class="text-lg sm:text-xl text-gray-500 mb-10 leading-relaxed">With deep expertise in modern technology and strong roots in multiple business domains, we deliver high-end web, mobile, and enterprise solutions from idea to launch and beyond.</p>
           <div class="flex flex-col sm:flex-row gap-4">

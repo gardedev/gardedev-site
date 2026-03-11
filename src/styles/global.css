@@ -48,6 +48,15 @@ body {
   transition: color 0.2s;
 }
 .nav-link:hover { color: #002395; }
+/* Dark nav link (used on navy header) */
+.nav-link-dark {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #bfdbfe;
+  transition: color 0.2s;
+}
+.nav-link-dark:hover { color: #ffffff; }
+
 
 /* Buttons */
 .btn-primary {
