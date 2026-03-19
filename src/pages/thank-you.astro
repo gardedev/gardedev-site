@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
+
 <Layout title="Thank You — GardeDev" description="We received your message and will be in touch within 24 hours.">
   <div class="min-h-screen bg-gray-50 flex flex-col items-center justify-center px-4 py-16">
 
@@ -20,9 +21,29 @@ import Layout from '../layouts/Layout.astro';
       </div>
 
       <h1 class="text-3xl font-black text-gray-950 mb-3">Message Received!</h1>
-      <p class="text-gray-500 text-base leading-relaxed mb-2">
-        Thanks for reaching out. We'll review your project details and get back to you within <strong class="text-gray-700">24 hours</strong>.
-      </p>
+      
+      <!-- AI Agents specific message -->
+      <div id="ai-agents-message" class="hidden">
+        <p class="text-gray-500 text-base leading-relaxed mb-2">
+          Thanks for your interest in AI Agents! We'll review your automation needs and get back to you within <strong class="text-gray-700">24 hours</strong> with a customized solution.
+        </p>
+        <div class="bg-blue-50 rounded-lg p-4 mt-4 mb-4">
+          <p class="text-sm text-[#002395] font-semibold mb-1">What happens next?</p>
+          <ul class="text-sm text-gray-600 text-left space-y-1">
+            <li>• We'll analyze your current workflows</li>
+            <li>• Design a custom AI agent solution</li>
+            <li>• Provide a time & cost estimate</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Generic message -->
+      <div id="generic-message">
+        <p class="text-gray-500 text-base leading-relaxed mb-2">
+          Thanks for reaching out. We'll review your project details and get back to you within <strong class="text-gray-700">24 hours</strong>.
+        </p>
+      </div>
+      
       <p class="text-gray-400 text-sm mb-8">
         Questions? Email us at <a href="mailto:hello@gardedev.com" class="text-[#002395] hover:underline">hello@gardedev.com</a>
       </p>
@@ -34,4 +55,15 @@ import Layout from '../layouts/Layout.astro';
 
     <p class="mt-8 text-xs text-gray-400">&copy; 2025 GardeDev LLC. MBE Certified.</p>
   </div>
+
+  <script>
+    // Check URL params to show appropriate message
+    const urlParams = new URLSearchParams(window.location.search);
+    const source = urlParams.get('source');
+    
+    if (source === 'ai-agents') {
+      document.getElementById('ai-agents-message')?.classList.remove('hidden');
+      document.getElementById('generic-message')?.classList.add('hidden');
+    }
+  </script>
 </Layout>

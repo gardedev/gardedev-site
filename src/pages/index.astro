@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import '../styles/global.css';
 ---
 
-<Layout>
+<Layout title="GardeDev – AI Agents for Your Business | MBE Certified" description="Transform your business with custom AI Agents. Automate customer service, workflows, and repetitive tasks. Save 20-40 hours per week. MBE Certified.">
   <!-- NAV -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-[#001a6e] shadow-lg">
     <nav class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
@@ -11,94 +11,210 @@ import '../styles/global.css';
         <img src="/logo-original.png" alt="GardeDev" class="h-8 sm:h-10 w-auto" />
       </a>
       <div class="hidden md:flex items-center gap-8">
-        <a href="#services" class="nav-link-dark">Services</a>
-        <a href="#work" class="nav-link-dark">Work</a>
-        <a href="#about" class="nav-link-dark">About</a>
-        <a href="#contact" class="btn-primary text-sm py-2 px-5">Let's Talk</a>
+        <a href="/ai-agents-lead-form" class="btn-primary text-sm py-2 px-5">Get AI Agents</a>
       </div>
       <button id="menu-btn" class="md:hidden p-2 rounded-lg hover:bg-blue-800 shrink-0" aria-label="Menu">
         <svg width="24" height="24" fill="none" stroke="white" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </nav>
     <div id="mobile-menu" class="hidden md:hidden bg-[#001a6e] border-t border-blue-800 px-4 py-4 flex flex-col gap-3">
-      <a href="#services" class="nav-link-dark py-3 border-b border-blue-800 text-base font-medium">Services</a>
-      <a href="#work" class="nav-link-dark py-3 border-b border-blue-800 text-base font-medium">Work</a>
-      <a href="#about" class="nav-link-dark py-3 border-b border-blue-800 text-base font-medium">About</a>
-      <a href="#contact" class="btn-primary text-center justify-center mt-2">Let's Talk</a>
+      <a href="/ai-agents-lead-form" class="btn-primary text-center justify-center mt-2">Get AI Agents</a>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="relative min-h-screen flex items-center dot-grid pt-20 overflow-hidden">
-    <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-      <svg class="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
-        <line x1="75%" y1="15%" x2="85%" y2="40%" stroke="#002395" stroke-width="1" opacity="0.08"/>
-        <line x1="85%" y1="40%" x2="70%" y2="60%" stroke="#002395" stroke-width="1" opacity="0.08"/>
-        <line x1="60%" y1="25%" x2="75%" y2="15%" stroke="#002395" stroke-width="1" opacity="0.08"/>
-        <circle cx="75%" cy="15%" r="5" fill="#002395" opacity="0.12"/>
-        <circle cx="85%" cy="40%" r="7" fill="#002395" opacity="0.1"/>
-        <circle cx="78%" cy="45%" r="80" fill="#002395" opacity="0.03"/>
-      </svg>
-      <div class="hero-art-el animate-float hidden md:block" style="right:8%;top:18%;opacity:0.07;">
-        <svg width="120" height="120" viewBox="0 0 120 120"><polygon points="60,5 115,92 5,92" fill="none" stroke="#002395" stroke-width="2"/><polygon points="60,20 100,85 20,85" fill="#002395"/></svg>
-      </div>
+  <!-- AI AGENTS HERO -->
+  <section id="ai-agents" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0 z-0">
+      <img src="/ai-agents-hero-bg.png" alt="" class="w-full h-full object-cover opacity-30" />
+      <div class="absolute inset-0 bg-gradient-to-br from-[#001a6e]/90 via-[#001a6e]/80 to-[#002395]/70"></div>
     </div>
-    <div class="relative w-full max-w-7xl mx-auto px-4 sm:px-6 py-20 sm:py-28">
+    
+    <div class="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 py-20 sm:py-28">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
-          <div class="inline-flex items-center gap-2 bg-blue-50 text-[#002395] text-sm font-semibold px-4 py-2 rounded-full mb-6 border border-blue-100">
-            <svg width="14" height="14" fill="#002395" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white text-sm font-semibold px-4 py-2 rounded-full mb-6 border border-white/20">
+            <svg width="14" height="14" fill="#ED2939" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
             MBE Certified Company
           </div>
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.1] mb-6 text-gray-950">
-            Empowering your<br/>
-            <span class="text-[#002395]">business</span> with<br/>
-            <span class="relative inline-block text-[#002395]">cutting-edge AI.<span class="absolute -bottom-1 left-0 right-0 h-1.5 bg-[#ED2939] rounded"></span></span>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.1] mb-6 text-white">
+            Create AI Agents<br/>
+            <span class="text-[#ED2939]">For Your</span><br/>
+            <span class="relative inline-block">Company<span class="absolute -bottom-1 left-0 right-0 h-1.5 bg-[#ED2939] rounded"></span></span>
           </h1>
-          <p class="text-lg sm:text-xl text-gray-500 mb-10 leading-relaxed">With deep expertise in modern technology and strong roots in multiple business domains, we deliver high-end web, mobile, and enterprise solutions from idea to launch and beyond.</p>
+          <p class="text-lg sm:text-xl text-blue-100 mb-10 leading-relaxed max-w-xl">
+            Transform your business operations with intelligent AI agents that work 24/7. Automate customer service, streamline workflows, and reclaim 20-40 hours every week.
+          </p>
           <div class="flex flex-col sm:flex-row gap-4">
-            <a href="#contact" class="btn-primary justify-center sm:justify-start">Let's Talk <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            <a href="#work" class="btn-outline justify-center sm:justify-start">View Our Work</a>
-          </div>
-          <div class="mt-10 flex items-center gap-4">
-            <div class="flex -space-x-2">
-              <div class="w-9 h-9 rounded-full bg-[#002395] border-2 border-white flex items-center justify-center text-white text-xs font-bold">CR</div>
-              <div class="w-9 h-9 rounded-full bg-[#ED2939] border-2 border-white flex items-center justify-center text-white text-xs font-bold">AM</div>
-              <div class="w-9 h-9 rounded-full bg-gray-700 border-2 border-white flex items-center justify-center text-white text-xs font-bold">KP</div>
-            </div>
-            <p class="text-sm text-gray-500">Trusted by <span class="font-semibold text-gray-800">20+ clients</span> across industries</p>
+            <a href="/ai-agents-lead-form" class="btn-primary justify-center sm:justify-start bg-[#ED2939] hover:bg-[#c41e2b]">
+              Get Your AI Agents
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#benefits" class="inline-flex items-center justify-center sm:justify-start gap-2 px-6 py-3 border-2 border-white/30 text-white font-semibold rounded-lg hover:bg-white/10 transition">
+              See How It Works
+            </a>
           </div>
         </div>
-        <div class="hidden lg:grid grid-cols-2 gap-4">
-          <div class="bg-white rounded-2xl shadow-md p-6 border border-gray-100 flex flex-col gap-3">
-            <div class="w-11 h-11 bg-blue-50 rounded-xl flex items-center justify-center"><svg width="22" height="22" fill="none" stroke="#002395" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-            <h3 class="font-bold text-gray-900">Enterprise Software</h3><p class="text-sm text-gray-500">Custom platforms that scale with your business.</p>
-          </div>
-          <div class="bg-[#002395] rounded-2xl shadow-md p-6 flex flex-col gap-3 mt-8">
-            <div class="w-11 h-11 bg-white/10 rounded-xl flex items-center justify-center"><svg width="22" height="22" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div>
-            <h3 class="font-bold text-white">E-Commerce</h3><p class="text-sm text-blue-200">High-converting stores with seamless UX.</p>
-          </div>
-          <div class="bg-[#ED2939] rounded-2xl shadow-md p-6 flex flex-col gap-3">
-            <div class="w-11 h-11 bg-white/10 rounded-xl flex items-center justify-center"><svg width="22" height="22" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
-            <h3 class="font-bold text-white">API & EDI</h3><p class="text-sm text-red-100">Robust integrations that keep data flowing.</p>
-          </div>
-          <div class="bg-white rounded-2xl shadow-md p-6 border border-gray-100 flex flex-col gap-3 mt-8">
-            <div class="w-11 h-11 bg-red-50 rounded-xl flex items-center justify-center"><svg width="22" height="22" fill="none" stroke="#ED2939" stroke-width="2" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
-            <h3 class="font-bold text-gray-900">Mobile & Web</h3><p class="text-sm text-gray-500">Polished apps built for every platform.</p>
+        <div class="hidden lg:block">
+          <div class="relative">
+            <img src="/ai-customer-service.png" alt="AI Customer Service" class="rounded-2xl shadow-2xl border border-white/20" />
+            <div class="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-4 border border-gray-100">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                  <svg width="20" height="20" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-gray-900">Response Time</p>
+                  <p class="text-xs text-gray-500">Under 5 seconds</p>
+                </div>
+              </div>
+            </div>
+            <div class="absolute -top-6 -right-6 bg-[#ED2939] rounded-xl shadow-xl p-4 text-white">
+              <p class="text-2xl font-black">40+</p>
+              <p class="text-xs opacity-90">Hours Saved/Week</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- STATS -->
-  <section class="py-14 bg-[#002395]">
+  <!-- AI STATS -->
+  <section class="py-14 bg-[#ED2939]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-        <div class="text-center"><div class="text-4xl sm:text-5xl font-black text-white mb-1">15<span class="text-[#ED2939]">+</span></div><div class="text-blue-200 text-sm font-medium">Years of Experience</div></div>
-        <div class="text-center"><div class="text-4xl sm:text-5xl font-black text-white mb-1"><span class="text-[#ED2939]">$</span>100M<span class="text-[#ED2939]">+</span></div><div class="text-blue-200 text-sm font-medium">Revenue Conversions</div></div>
-        <div class="text-center"><div class="text-4xl sm:text-5xl font-black text-white mb-1">20<span class="text-[#ED2939]">+</span></div><div class="text-blue-200 text-sm font-medium">Technologies</div></div>
-        <div class="text-center"><div class="text-4xl sm:text-5xl font-black text-white mb-1">98<span class="text-[#ED2939]">%</span></div><div class="text-blue-200 text-sm font-medium">Job Success Rate</div></div>
+        <div class="text-center">
+          <div class="text-4xl sm:text-5xl font-black text-white mb-1">24/7</div>
+          <div class="text-red-100 text-sm font-medium">Always Available</div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl sm:text-5xl font-black text-white mb-1">80<span class="text-[#002395]">%</span></div>
+          <div class="text-red-100 text-sm font-medium">Faster Response</div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl sm:text-5xl font-black text-white mb-1">20-40</div>
+          <div class="text-red-100 text-sm font-medium">Hours Saved Weekly</div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl sm:text-5xl font-black text-white mb-1">3<span class="text-[#002395]">x</span></div>
+          <div class="text-red-100 text-sm font-medium">More Productive</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS SECTION -->
+  <section id="benefits" class="py-20 sm:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-14">
+        <p class="text-sm font-semibold text-[#ED2939] uppercase tracking-widest mb-3">What AI Agents Do For You</p>
+        <h2 class="text-3xl sm:text-4xl font-black text-gray-950 mb-4">Reclaim Your Time. Scale Your Business.</h2>
+        <p class="text-base sm:text-lg text-gray-500 max-w-2xl mx-auto">Our AI agents handle the repetitive work so your team can focus on what matters most.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition">
+          <div class="w-14 h-14 bg-[#002395]/10 rounded-xl flex items-center justify-center mb-5">
+            <svg width="28" height="28" fill="none" stroke="#002395" stroke-width="2" viewBox="0 0 24 24"><path d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">24/7 Customer Support</h3>
+          <p class="text-gray-600 leading-relaxed mb-4">AI agents handle customer inquiries around the clock. No more missed messages, no more after-hours emergencies.</p>
+          <div class="flex items-center gap-2 text-sm text-[#002395] font-semibold">
+            <span>Saves 15+ hours/week</span>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition">
+          <div class="w-14 h-14 bg-[#ED2939]/10 rounded-xl flex items-center justify-center mb-5">
+            <svg width="28" height="28" fill="none" stroke="#ED2939" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Instant Response Times</h3>
+          <p class="text-gray-600 leading-relaxed mb-4">Reduce response times from hours to seconds. Your customers get immediate answers, improving satisfaction.</p>
+          <div class="flex items-center gap-2 text-sm text-[#ED2939] font-semibold">
+            <span>Under 5 second response</span>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition">
+          <div class="w-14 h-14 bg-[#002395]/10 rounded-xl flex items-center justify-center mb-5">
+            <svg width="28" height="28" fill="none" stroke="#002395" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Workflow Automation</h3>
+          <p class="text-gray-600 leading-relaxed mb-4">Automate repetitive tasks like data entry, scheduling, follow-ups, and report generation.</p>
+          <div class="flex items-center gap-2 text-sm text-[#002395] font-semibold">
+            <span>Automates 10+ workflows</span>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition">
+          <div class="w-14 h-14 bg-[#ED2939]/10 rounded-xl flex items-center justify-center mb-5">
+            <svg width="28" height="28" fill="none" stroke="#ED2939" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Scale Without Hiring</h3>
+          <p class="text-gray-600 leading-relaxed mb-4">Handle 10x the volume without adding headcount. AI agents scale instantly to meet demand.</p>
+          <div class="flex items-center gap-2 text-sm text-[#ED2939] font-semibold">
+            <span>Unlimited scalability</span>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition">
+          <div class="w-14 h-14 bg-[#002395]/10 rounded-xl flex items-center justify-center mb-5">
+            <svg width="28" height="28" fill="none" stroke="#002395" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Consistent Quality</h3>
+          <p class="text-gray-600 leading-relaxed mb-4">Every interaction follows your brand guidelines. No bad days, no inconsistent messaging.</p>
+          <div class="flex items-center gap-2 text-sm text-[#002395] font-semibold">
+            <span>100% brand consistency</span>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition">
+          <div class="w-14 h-14 bg-[#ED2939]/10 rounded-xl flex items-center justify-center mb-5">
+            <svg width="28" height="28" fill="none" stroke="#ED2939" stroke-width="2" viewBox="0 0 24 24"><path d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Seamless Integration</h3>
+          <p class="text-gray-600 leading-relaxed mb-4">Connects with your existing tools — email, CRM, Slack, calendars, and more.</p>
+          <div class="flex items-center gap-2 text-sm text-[#ED2939] font-semibold">
+            <span>50+ integrations</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center">
+        <a href="/ai-agents-lead-form" class="btn-primary inline-flex">
+          Get Started with AI Agents
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="py-20 sm:py-28 bg-gray-50 dot-grid">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-14">
+        <p class="text-sm font-semibold text-[#ED2939] uppercase tracking-widest mb-3">Simple Process</p>
+        <h2 class="text-3xl sm:text-4xl font-black text-gray-950 mb-4">Get Your AI Agent in 3 Steps</h2>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 text-center relative">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-[#002395] text-white rounded-full flex items-center justify-center font-bold">1</div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2 mt-4">Tell Us Your Needs</h3>
+          <p class="text-gray-500 text-sm">Share what tasks you want automated and how your business operates.</p>
+        </div>
+        
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 text-center relative">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-[#ED2939] text-white rounded-full flex items-center justify-center font-bold">2</div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2 mt-4">We Build Your Agent</h3>
+          <p class="text-gray-500 text-sm">Our team customizes and trains your AI agent for your specific use case.</p>
+        </div>
+        
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 text-center relative">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-[#002395] text-white rounded-full flex items-center justify-center font-bold">3</div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2 mt-4">Go Live & Save Time</h3>
+          <p class="text-gray-500 text-sm">Your AI agent starts working immediately. Watch your productivity soar.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -107,215 +223,27 @@ import '../styles/global.css';
   <section id="services" class="py-20 sm:py-28 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-14">
-        <p class="text-sm font-semibold text-[#ED2939] uppercase tracking-widest mb-3">What We Do</p>
-        <h2 class="text-3xl sm:text-4xl font-black text-gray-950 mb-4">Built for every stage of growth</h2>
-        <p class="text-base sm:text-lg text-gray-500 max-w-2xl mx-auto">From initial concept to full-scale enterprise systems, we have the expertise to deliver end-to-end.</p>
+        <p class="text-sm font-semibold text-[#ED2939] uppercase tracking-widest mb-3">Full-Service Development</p>
+        <h2 class="text-3xl sm:text-4xl font-black text-gray-950 mb-4">Built for Every Stage of Growth</h2>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <div class="service-card">
-          <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-5"><svg width="24" height="24" fill="none" stroke="#002395" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
           <h3 class="text-lg font-bold text-gray-900 mb-2">Enterprise Software</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Custom-built platforms tailored to your business. Scalable, maintainable, and designed to grow with you.</p>
-          <ul class="mt-4 space-y-1.5">
-            <li class="text-xs text-gray-400 flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#002395] shrink-0 inline-block"></span>CRM &amp; ERP Systems</li>
-            <li class="text-xs text-gray-400 flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#002395] shrink-0 inline-block"></span>Workflow Automation</li>
-            <li class="text-xs text-gray-400 flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#002395] shrink-0 inline-block"></span>Cloud Infrastructure</li>
-          </ul>
-        </div>
-        <div class="service-card" style="border-top-color:#ED2939;">
-          <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center mb-5"><svg width="24" height="24" fill="none" stroke="#ED2939" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div>
-          <h3 class="text-lg font-bold text-gray-900 mb-2">E-Commerce Websites</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">High-converting stores with seamless UX, inventory management, and payment integrations that drive revenue.</p>
-          <ul class="mt-4 space-y-1.5">
-            <li class="text-xs text-gray-400 flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#ED2939] shrink-0 inline-block"></span>Custom Storefronts</li>
-            <li class="text-xs text-gray-400 flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#ED2939] shrink-0 inline-block"></span>Payment Gateways</li>
-            <li class="text-xs text-gray-400 flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#ED2939] shrink-0 inline-block"></span>Inventory &amp; Fulfillment</li>
-          </ul>
+          <p class="text-gray-500 text-sm">Custom platforms tailored to your business.</p>
         </div>
         <div class="service-card">
-          <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-5"><svg width="24" height="24" fill="none" stroke="#002395" stroke-width="2" viewBox="0 0 24 24"><path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
-          <h3 class="text-lg font-bold text-gray-900 mb-2">API &amp; EDI Integrations</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Connect your systems seamlessly. Robust integrations that keep your data flowing reliably at scale.</p>
-          <ul class="mt-4 space-y-1.5">
-            <li class="text-xs text-gray-400 flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#002395] shrink-0 inline-block"></span>REST &amp; GraphQL APIs</li>
-            <li class="text-xs text-gray-400 flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#002395] shrink-0 inline-block"></span>EDI 850 / 856 / 810</li>
-            <li class="text-xs text-gray-400 flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#002395] shrink-0 inline-block"></span>Third-Party Connectors</li>
-          </ul>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">E-Commerce</h3>
+          <p class="text-gray-500 text-sm">High-converting stores with seamless UX.</p>
         </div>
-        <div class="service-card" style="border-top-color:#ED2939;">
-          <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center mb-5"><svg width="24" height="24" fill="none" stroke="#ED2939" stroke-width="2" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
-          <h3 class="text-lg font-bold text-gray-900 mb-2">Mobile &amp; Web Apps</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Polished, performant apps for web and mobile. Modern frameworks, optimized for real-world usage.</p>
-          <ul class="mt-4 space-y-1.5">
-            <li class="text-xs text-gray-400 flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#ED2939] shrink-0 inline-block"></span>React &amp; Next.js</li>
-            <li class="text-xs text-gray-400 flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#ED2939] shrink-0 inline-block"></span>iOS &amp; Android Apps</li>
-            <li class="text-xs text-gray-400 flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#ED2939] shrink-0 inline-block"></span>Progressive Web Apps</li>
-          </ul>
+        <div class="service-card">
+          <h3 class="text-lg font-bold text-gray-900 mb-2">API & EDI</h3>
+          <p class="text-gray-500 text-sm">Robust integrations that keep data flowing.</p>
+        </div>
+        <div class="service-card">
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Mobile & Web</h3>
+          <p class="text-gray-500 text-sm">Polished apps built for every platform.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- WHY GARDEDEV -->
-  <section class="py-20 sm:py-28 bg-gray-50 dot-grid">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-        <div>
-          <p class="text-sm font-semibold text-[#ED2939] uppercase tracking-widest mb-3">Why GardeDev</p>
-          <h2 class="text-3xl sm:text-4xl font-black text-gray-950 mb-6">What makes us different?</h2>
-          <p class="text-gray-600 leading-relaxed mb-4">GardeDev has an extensive history of developing custom software products tailored to the specific business needs of our clients, supporting them throughout the whole way from idea to implementation.</p>
-          <p class="text-gray-600 leading-relaxed mb-8">With a deep understanding of modern technology and strong expertise in multiple business domains, our solid background, flexibility, and full transparency have enabled us to become a trusted technology partner across industries.</p>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div class="flex items-start gap-3 bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
-              <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center shrink-0"><svg width="14" height="14" fill="#002395" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg></div>
-              <div><h4 class="font-semibold text-gray-900 text-sm">MBE Certified</h4><p class="text-xs text-gray-500 mt-0.5">Certified Minority Business Enterprise</p></div>
-            </div>
-            <div class="flex items-start gap-3 bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
-              <div class="w-8 h-8 bg-red-50 rounded-lg flex items-center justify-center shrink-0"><svg width="14" height="14" fill="#ED2939" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg></div>
-              <div><h4 class="font-semibold text-gray-900 text-sm">Full Transparency</h4><p class="text-xs text-gray-500 mt-0.5">You always know what we're building</p></div>
-            </div>
-            <div class="flex items-start gap-3 bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
-              <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center shrink-0"><svg width="14" height="14" fill="#002395" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg></div>
-              <div><h4 class="font-semibold text-gray-900 text-sm">End-to-End Delivery</h4><p class="text-xs text-gray-500 mt-0.5">From idea to launch and beyond</p></div>
-            </div>
-            <div class="flex items-start gap-3 bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
-              <div class="w-8 h-8 bg-red-50 rounded-lg flex items-center justify-center shrink-0"><svg width="14" height="14" fill="#ED2939" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg></div>
-              <div><h4 class="font-semibold text-gray-900 text-sm">Multi-Domain Expertise</h4><p class="text-xs text-gray-500 mt-0.5">Retail, hospitality, finance &amp; more</p></div>
-            </div>
-          </div>
-        </div>
-        <div>
-          <p class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-5 text-center lg:text-left">Technologies We Work With</p>
-          <div class="grid grid-cols-3 gap-3">
-            <div class="bg-white border border-gray-100 rounded-xl p-4 text-center shadow-sm"><div class="font-black text-[#002395] text-base">React</div><div class="text-xs text-gray-400 mt-1">Frontend</div></div>
-            <div class="bg-white border border-gray-100 rounded-xl p-4 text-center shadow-sm"><div class="font-black text-[#ED2939] text-base">Node.js</div><div class="text-xs text-gray-400 mt-1">Backend</div></div>
-            <div class="bg-white border border-gray-100 rounded-xl p-4 text-center shadow-sm"><div class="font-black text-[#002395] text-base">AWS</div><div class="text-xs text-gray-400 mt-1">Cloud</div></div>
-            <div class="bg-white border border-gray-100 rounded-xl p-4 text-center shadow-sm"><div class="font-black text-[#ED2939] text-base">Python</div><div class="text-xs text-gray-400 mt-1">AI &amp; Data</div></div>
-            <div class="bg-white border border-gray-100 rounded-xl p-4 text-center shadow-sm"><div class="font-black text-[#002395] text-base">Next.js</div><div class="text-xs text-gray-400 mt-1">Full-Stack</div></div>
-            <div class="bg-white border border-gray-100 rounded-xl p-4 text-center shadow-sm"><div class="font-black text-[#ED2939] text-base">MySQL</div><div class="text-xs text-gray-400 mt-1">Database</div></div>
-            <div class="bg-white border border-gray-100 rounded-xl p-4 text-center shadow-sm"><div class="font-black text-[#002395] text-base">PHP</div><div class="text-xs text-gray-400 mt-1">Backend</div></div>
-            <div class="bg-white border border-gray-100 rounded-xl p-4 text-center shadow-sm"><div class="font-black text-[#ED2939] text-base">iOS</div><div class="text-xs text-gray-400 mt-1">Mobile</div></div>
-            <div class="bg-white border border-gray-100 rounded-xl p-4 text-center shadow-sm"><div class="font-black text-[#002395] text-base">EDI</div><div class="text-xs text-gray-400 mt-1">Integrations</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- NOTABLE WORK -->
-  <section id="work" class="py-20 sm:py-28 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-14">
-        <p class="text-sm font-semibold text-[#ED2939] uppercase tracking-widest mb-3">Portfolio</p>
-        <h2 class="text-3xl sm:text-4xl font-black text-gray-950 mb-4">Our Notable Works</h2>
-        <p class="text-base sm:text-lg text-gray-500 max-w-2xl mx-auto">We have partnered with organizations across retail, hospitality, faith, and tech to deliver lasting impact.</p>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <a href="https://www.fairwaymarket.com" target="_blank" rel="noopener" class="client-card group">
-          <div class="w-10 h-10 rounded-lg bg-[#002395] flex items-center justify-center mb-4">
-            <svg width="20" height="20" fill="white" viewBox="0 0 24 24"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-          </div>
-          <h3 class="font-bold text-gray-900 mb-1 group-hover:text-[#002395] transition-colors">Fairway Market</h3>
-          <p class="text-sm text-gray-500 leading-relaxed">E-commerce and digital infrastructure for a leading NYC grocer, serving thousands of daily customers.</p>
-          <span class="text-xs text-[#002395] font-semibold mt-3 inline-block">View Project &rarr;</span>
-        </a>
-        <a href="https://saintpatrickscathedral.org" target="_blank" rel="noopener" class="client-card group">
-          <div class="w-10 h-10 rounded-lg bg-[#ED2939] flex items-center justify-center mb-4">
-            <svg width="20" height="20" fill="white" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-          </div>
-          <h3 class="font-bold text-gray-900 mb-1 group-hover:text-[#ED2939] transition-colors">Saint Patrick's Cathedral</h3>
-          <p class="text-sm text-gray-500 leading-relaxed">Web solutions for one of NYC's most iconic and visited landmark institutions.</p>
-          <span class="text-xs text-[#ED2939] font-semibold mt-3 inline-block">View Project &rarr;</span>
-        </a>
-        <a href="https://www.logoup.com" target="_blank" rel="noopener" class="client-card group">
-          <div class="w-10 h-10 rounded-lg bg-[#002395] flex items-center justify-center mb-4">
-            <svg width="20" height="20" fill="white" viewBox="0 0 24 24"><path d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
-          </div>
-          <h3 class="font-bold text-gray-900 mb-1 group-hover:text-[#002395] transition-colors">LogoUp</h3>
-          <p class="text-sm text-gray-500 leading-relaxed">Custom platform development for a leading branded merchandise marketplace.</p>
-          <span class="text-xs text-[#002395] font-semibold mt-3 inline-block">View Project &rarr;</span>
-        </a>
-        <a href="https://www.alldayshirts.com" target="_blank" rel="noopener" class="client-card group">
-          <div class="w-10 h-10 rounded-lg bg-[#ED2939] flex items-center justify-center mb-4">
-            <svg width="20" height="20" fill="white" viewBox="0 0 24 24"><path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.57a1 1 0 00.99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.57a2 2 0 00-1.34-2.23z"/></svg>
-          </div>
-          <h3 class="font-bold text-gray-900 mb-1 group-hover:text-[#ED2939] transition-colors">AllDayShirts</h3>
-          <p class="text-sm text-gray-500 leading-relaxed">Full-stack e-commerce and operations platform for custom apparel at scale.</p>
-          <span class="text-xs text-[#ED2939] font-semibold mt-3 inline-block">View Project &rarr;</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="py-20 sm:py-28 bg-gray-950 dot-grid">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-        <div>
-          <p class="text-sm font-semibold text-[#ED2939] uppercase tracking-widest mb-3">About GardeDev</p>
-          <h2 class="text-3xl sm:text-4xl font-black text-white mb-6">We don&#39;t just write code.<br/>We solve problems.</h2>
-          <p class="text-gray-400 leading-relaxed mb-5">GardeDev is an MBE Certified software company with deep roots in building technology that actually works for business. We&#39;ve partnered with organizations ranging from NYC institutions to fast-growing e-commerce brands.</p>
-          <p class="text-gray-400 leading-relaxed mb-8">Our approach: understand the business first, then build the right solution — not the most complex one. From idea to implementation, we&#39;re with you every step of the way.</p>
-          <div class="flex flex-wrap gap-3">
-            <div class="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg px-4 py-2">
-              <svg width="16" height="16" fill="#ED2939" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-              <span class="text-white text-sm font-medium">MBE Certified</span>
-            </div>
-            <div class="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg px-4 py-2">
-              <svg width="16" height="16" fill="#002395" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-              <span class="text-white text-sm font-medium">Full-Stack Expertise</span>
-            </div>
-            <div class="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg px-4 py-2">
-              <svg width="16" height="16" fill="#ED2939" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-              <span class="text-white text-sm font-medium">10+ Years Experience</span>
-            </div>
-          </div>
-        </div>
-        <div class="grid grid-cols-2 gap-4">
-          <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition"><div class="text-3xl font-black text-[#002395] mb-2">React</div><div class="text-gray-400 text-sm">Frontend</div></div>
-          <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition"><div class="text-3xl font-black text-[#ED2939] mb-2">Node</div><div class="text-gray-400 text-sm">Backend</div></div>
-          <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition"><div class="text-3xl font-black text-[#002395] mb-2">AWS</div><div class="text-gray-400 text-sm">Cloud</div></div>
-          <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition"><div class="text-3xl font-black text-[#ED2939] mb-2">EDI</div><div class="text-gray-400 text-sm">Integrations</div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="py-20 sm:py-28 bg-white">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-12">
-        <p class="text-sm font-semibold text-[#ED2939] uppercase tracking-widest mb-3">Get In Touch</p>
-        <h2 class="text-3xl sm:text-4xl font-black text-gray-950 mb-4">Let us manage all the hard work!</h2>
-        <p class="text-lg text-gray-500">Connect with us to find your solutions. We'll get back to you within 24 hours.</p>
-      </div>
-      <form id="contactForm" class="space-y-5">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          <div>
-            <label class="block text-sm font-semibold text-gray-700 mb-2" for="name">Name</label>
-            <input id="name" name="name" type="text" required placeholder="Your name" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#002395] focus:border-transparent transition text-gray-900 placeholder-gray-400 text-base" />
-          </div>
-          <div>
-            <label class="block text-sm font-semibold text-gray-700 mb-2" for="email">Email</label>
-            <input id="email" name="email" type="email" required placeholder="you@company.com" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#002395] focus:border-transparent transition text-gray-900 placeholder-gray-400 text-base" />
-          </div>
-        </div>
-        <div>
-          <label class="block text-sm font-semibold text-gray-700 mb-2" for="company">Company (optional)</label>
-          <input id="company" name="company" type="text" placeholder="Your company" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#002395] focus:border-transparent transition text-gray-900 placeholder-gray-400 text-base" />
-        </div>
-        <div>
-          <label class="block text-sm font-semibold text-gray-700 mb-2" for="message">Tell us about your project</label>
-          <textarea id="message" name="message" required rows="5" placeholder="What are you building? What's the challenge?" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#002395] focus:border-transparent transition text-gray-900 placeholder-gray-400 resize-none text-base"></textarea>
-        </div>
-        <div class="h-captcha" data-sitekey="e102b9ae-b390-432e-9498-906c007c0294"></div>
-        <button type="submit" id="submitBtn" class="btn-primary w-full justify-center text-base py-4">
-          Send Message
-          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </button>
-      </form>
-
-      <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
     </div>
   </section>
 
@@ -326,72 +254,14 @@ import '../styles/global.css';
         <div class="flex items-center">
           <img src="/logo-original.png" alt="GardeDev" class="h-10 w-auto" />
         </div>
-        <div class="flex flex-wrap justify-center gap-6 text-sm text-blue-200">
-          <a href="#services" class="hover:text-white transition">Services</a>
-          <a href="#work" class="hover:text-white transition">Work</a>
-          <a href="#about" class="hover:text-white transition">About</a>
-          <a href="#contact" class="hover:text-white transition">Contact</a>
-        </div>
         <p class="text-sm text-blue-200 text-center">&copy; 2025 GardeDev LLC. MBE Certified.</p>
       </div>
     </div>
   </footer>
 
   <script>
-    // Contact form submission
-    const contactForm = document.getElementById('contactForm');
-    contactForm?.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const token = (window as any).hcaptcha?.getResponse();
-      if (!token) {
-        alert('Please complete the CAPTCHA to continue.');
-        return;
-      }
-      const submitBtn = document.getElementById('submitBtn') as HTMLButtonElement;
-      submitBtn.textContent = 'Sending…';
-      submitBtn.disabled = true;
-      try {
-        const formData = new FormData(contactForm as HTMLFormElement);
-        formData.delete('h-captcha-response');
-        formData.append('h-captcha-response', token);
-        const res = await fetch('https://formspree.io/f/xbdzgegq', {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
-        });
-        const json = await res.json();
-        if (res.ok) {
-          window.location.href = '/thank-you';
-        } else {
-          submitBtn.textContent = 'Send Message';
-          submitBtn.disabled = false;
-          (window as any).hcaptcha?.reset();
-          alert((json.errors && json.errors.map((err: any) => err.message).join(', ')) || 'Something went wrong. Please try again.');
-        }
-      } catch {
-        submitBtn.textContent = 'Send Message';
-        submitBtn.disabled = false;
-        (window as any).hcaptcha?.reset();
-        alert('Network error. Please try again.');
-      }
-    });
-
     const btn = document.getElementById('menu-btn');
     const menu = document.getElementById('mobile-menu');
     btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
-    menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.add('hidden')));
-
-    // Smooth scroll offset for fixed header
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          const offset = 80;
-          const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-          window.scrollTo({ top, behavior: 'smooth' });
-        }
-      });
-    });
   </script>
 </Layout>
