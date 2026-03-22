@@ -70,6 +70,19 @@ p { margin-bottom: var(--space-sm); }
 /* Hero */
 .hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--color-bg-alt) 0%, var(--color-bg) 100%); padding-top: 70px; overflow: hidden; }
 .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 20% 80%, rgba(139, 69, 19, 0.08) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(218, 165, 32, 0.08) 0%, transparent 50%); }
+
+/* Hero with background image */
+.hero-with-image { background: none; }
+.hero-with-image::before { background: linear-gradient(to bottom, rgba(44, 36, 22, 0.7), rgba(44, 36, 22, 0.85)); z-index: 1; }
+.hero-bg-image { position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 0; }
+.hero-bg-image img { width: 100%; height: 100%; object-fit: cover; }
+.hero-with-image .hero-content { z-index: 2; }
+.hero-with-image .hero-title,
+.hero-with-image .hero-subtitle { color: var(--color-text-inverse); }
+.hero-with-image .hero-subtitle { opacity: 0.9; }
+
+.hero-badge { display: inline-block; padding: 0.5rem 1.25rem; background: var(--color-secondary); color: var(--color-bg-dark); font-family: var(--font-heading); font-size: 0.875rem; font-weight: 600; letter-spacing: 0.1em; border-radius: 4px; margin-bottom: var(--space-md); }
+
 .hero-content { position: relative; z-index: 1; text-align: center; max-width: 800px; padding: var(--space-xl); }
 .hero-title { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 700; margin-bottom: var(--space-md); }
 .hero-subtitle { font-size: clamp(1.125rem, 2.5vw, 1.5rem); color: var(--color-text-light); margin-bottom: var(--space-xl); font-weight: 300; }
@@ -97,6 +110,12 @@ p { margin-bottom: var(--space-sm); }
 .link-arrow { display: inline-flex; align-items: center; gap: var(--space-xs); font-weight: 500; color: var(--color-primary); margin-top: var(--space-md); }
 .link-arrow span { transition: transform 0.3s ease; }
 .link-arrow:hover span { transform: translateX(4px); }
+
+.image-frame { position: relative; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-lg); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.image-frame:hover { transform: translateY(-4px); box-shadow: var(--shadow-xl); }
+.image-frame img { width: 100%; height: auto; display: block; }
+.image-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: var(--space-md); background: linear-gradient(to top, rgba(44, 36, 22, 0.9), transparent); color: var(--color-text-inverse); font-size: 0.875rem; text-align: center; }
+.featured-image { aspect-ratio: 4/3; object-fit: cover; }
 
 .image-frame { position: relative; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-lg); }
 .image-placeholder { aspect-ratio: 4/3; background: linear-gradient(135deg, var(--color-bg-alt) 0%, var(--color-border) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--color-text-muted); }
@@ -155,8 +174,12 @@ p { margin-bottom: var(--space-sm); }
 .timeline-item { display: flex; justify-content: flex-end; padding-right: 50%; position: relative; margin-bottom: var(--space-xl); }
 .timeline-item:nth-child(even) { justify-content: flex-start; padding-right: 0; padding-left: 50%; }
 .timeline-year { position: absolute; left: 50%; transform: translateX(-50%); width: 60px; height: 60px; background: var(--color-primary); color: var(--color-text-inverse); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-weight: 700; font-size: 0.875rem; }
-.timeline-content { max-width: 300px; padding: var(--space-md); background: var(--color-bg-alt); border-radius: 12px; margin-right: var(--space-xl); }
+.timeline-content { max-width: 350px; padding: var(--space-md); background: var(--color-bg-alt); border-radius: 12px; margin-right: var(--space-xl); box-shadow: var(--shadow-sm); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.timeline-content:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
 .timeline-item:nth-child(even) .timeline-content { margin-right: 0; margin-left: var(--space-xl); }
+.timeline-image { margin-bottom: var(--space-md); border-radius: 8px; overflow: hidden; }
+.timeline-image img { width: 100%; height: 180px; object-fit: cover; display: block; transition: transform 0.3s ease; }
+.timeline-content:hover .timeline-image img { transform: scale(1.05); }
 .timeline-content h3 { margin-bottom: var(--space-xs); }
 .timeline-content p { font-size: 0.9375rem; color: var(--color-text-light); margin-bottom: 0; }
 
