@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Cornucopia Lodge 563</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🌾</span>
+                <span class="logo-text">Cornucopia Lodge 563</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="events.html" class="nav-link active">Events</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Events & Activities</h1>
+            <p>Join us for fellowship, service, and community</p>
+        </div>
+    </section>
+
+    <!-- Regular Events -->
+    <section class="regular-events">
+        <div class="container">
+            <div class="section-header centered">
+                <span class="section-tag">Weekly & Monthly</span>
+                <h2>Regular Gatherings</h2>
+            </div>
+            <div class="regular-grid">
+                <div class="regular-card">
+                    <div class="regular-icon">📜</div>
+                    <h3>Stated Meetings</h3>
+                    <p class="regular-time">Tuesdays at 7:00 PM</p>
+                    <p>Our regular business meetings where we conduct lodge business, recognize achievements, and enjoy fellowship. Dinner served at 6:00 PM.</p>
+                </div>
+                <div class="regular-card">
+                    <div class="regular-icon">☕</div>
+                    <h3>Social Hour</h3>
+                    <p class="regular-time">Thursdays at 6:00 PM</p>
+                    <p>Informal gathering for members and guests. Great opportunity to meet brothers, ask questions, and enjoy casual conversation.</p>
+                </div>
+                <div class="regular-card">
+                    <div class="regular-icon">🎓</div>
+                    <h3>Degree Practice</h3>
+                    <p class="regular-time">Saturdays at 9:00 AM</p>
+                    <p>Members practice ritual work and prepare for degree ceremonies. Open to all members interested in learning or perfecting their proficiency.</p>
+                </div>
+                <div class="regular-card">
+                    <div class="regular-icon">🤝</div>
+                    <h3>Community Service</h3>
+                    <p class="regular-time">Monthly - Various Times</p>
+                    <p>We organize regular service projects including food drives, park cleanups, and supporting local charities. Check calendar for dates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Events -->
+    <section class="upcoming-events">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Calendar</span>
+                <h2>Upcoming Events</h2>
+            </div>
+            
+            <div class="events-filter">
+                <button class="filter-btn active" data-filter="all">All Events</button>
+                <button class="filter-btn" data-filter="social">Social</button>
+                <button class="filter-btn" data-filter="service">Service</button>
+                <button class="filter-btn" data-filter="ceremony">Ceremonies</button>
+            </div>
+
+            <div class="events-full-list">
+                <div class="event-full-card" data-category="social">
+                    <div class="event-image">
+                        <div class="event-image-placeholder">🍽️</div>
+                        <span class="event-category">Social</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date-large">
+                            <span class="day">28</span>
+                            <span class="month">March</span>
+                        </div>
+                        <div class="event-info">
+                            <h3>Spring Fellowship Dinner</h3>
+                            <p class="event-meta">
+                                <span>📍 Lodge Hall</span>
+                                <span>🕕 6:00 PM</span>
+                            </p>
+                            <p>Join us for our annual spring dinner featuring a catered meal, fellowship, and our charity auction. All proceeds benefit the Cornucopia Foundation scholarship fund. Guests welcome with RSVP.</p>
+                            <a href="contact.html" class="btn btn-small">RSVP Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-full-card" data-category="service">
+                    <div class="event-image">
+                        <div class="event-image-placeholder">🌳</div>
+                        <span class="event-category">Service</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date-large">
+                            <span class="day">12</span>
+                            <span class="month">April</span>
+                        </div>
+                        <div class="event-info">
+                            <h3>Community Service Day</h3>
+                            <p class="event-meta">
+                                <span>📍 Riverside Park</span>
+                                <span>🕘 9:00 AM</span>
+                            </p>
+                            <p>Join your brothers for a morning of service as we clean up and beautify Riverside Park for spring. Tools and gloves provided. Breakfast served at 8:30 AM at the lodge before we head out.</p>
+                            <a href="contact.html" class="btn btn-small">Volunteer</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-full-card" data-category="ceremony">
+                    <div class="event-image">
+                        <div class="event-image-placeholder">⚜️</div>
+                        <span class="event-category">Ceremony</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date-large">
+                            <span class="day">26</span>
+                            <span class="month">April</span>
+                        </div>
+                        <div class="event-info">
+                            <h3>Degree Ceremony</h3>
+                            <p class="event-meta">
+                                <span>📍 Lodge Temple</span>
+                                <span>🕖 7:00 PM</span>
+                            </p>
+                            <p>Open to all members. We will be conferring the Fellow Craft degree. Dinner at 6:00 PM. Family and friends welcome to attend the closing and join us for refreshments afterward.</p>
+                            <a href="contact.html" class="btn btn-small">Attend</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-full-card" data-category="social">
+                    <div class="event-image">
+                        <div class="event-image-placeholder">🎣</div>
+                        <span class="event-category">Social</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date-large">
+                            <span class="day">10</span>
+                            <span class="month">May</span>
+                        </div>
+                        <div class="event-info">
+                            <h3>Annual Fishing Trip</h3>
+                            <p class="event-meta">
+                                <span>📍 Lake Serenity</span>
+                                <span>🕕 6:00 AM</span>
+                            </p>
+                            <p>Our annual brotherhood fishing trip! Charter boats reserved, breakfast and lunch provided. Great opportunity to bond with brothers outside the lodge. Families welcome. Limited spots available.</p>
+                            <a href="contact.html" class="btn btn-small">Reserve Spot</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-full-card" data-category="ceremony">
+                    <div class="event-image">
+                        <div class="event-image-placeholder">🎓</div>
+                        <span class="event-category">Ceremony</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date-large">
+                            <span class="day">24</span>
+                            <span class="month">May</span>
+                        </div>
+                        <div class="event-info">
+                            <h3>Scholarship Awards Night</h3>
+                            <p class="event-meta">
+                                <span>📍 Lodge Hall</span>
+                                <span>🕕 6:00 PM</span>
+                            </p>
+                            <p>Join us as we celebrate and award scholarships to deserving local students. Open to the public. Light refreshments served. A proud tradition of giving back to our community's youth.</p>
+                            <a href="contact.html" class="btn btn-small">Attend</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-full-card" data-category="social">
+                    <div class="event-image">
+                        <div class="event-image-placeholder">🇺🇸</div>
+                        <span class="event-category">Social</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date-large">
+                            <span class="day">14</span>
+                            <span class="month">June</span>
+                        </div>
+                        <div class="event-info">
+                            <h3>Flag Day Celebration</h3>
+                            <p class="event-meta">
+                                <span>📍 Lodge Grounds</span>
+                                <span>🕕 5:00 PM</span>
+                            </p>
+                            <p>Our annual Flag Day ceremony and barbecue. Proper retirement of worn flags, patriotic ceremony, followed by food, drinks, and family fun. Open to the entire community.</p>
+                            <a href="contact.html" class="btn btn-small">RSVP</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-box">
+                <h3>Stay Updated</h3>
+                <p>Subscribe to our monthly newsletter for event reminders, lodge news, and community updates.</p>
+                <form class="newsletter-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon">🌾</span>
+                        <span class="logo-text">Cornucopia Lodge 563</span>
+                    </div>
+                    <p>A fraternal organization dedicated to fellowship, charity, and community service since 1923.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p>123 Fellowship Way<br>Your City, ST 12345</p>
+                    <p>📞 (555) 123-4567<br>✉️ info@cornucopialodge563.org</p>
+                </div>
+                <div class="footer-hours">
+                    <h4>Lodge Hours</h4>
+                    <p>Tuesday: 7:00 PM - Stated Meeting<br>Thursday: 6:00 PM - Social Hour<br>Saturday: 10:00 AM - Community Events</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Cornucopia Lodge 563. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+
+        // Event filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const eventCards = document.querySelectorAll('.event-full-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.dataset.filter;
+                eventCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

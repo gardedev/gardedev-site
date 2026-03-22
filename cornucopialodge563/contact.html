@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Cornucopia Lodge 563</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🌾</span>
+                <span class="logo-text">Cornucopia Lodge 563</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="events.html" class="nav-link">Events</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <span class="section-tag">Get in Touch</span>
+                    <h2>Reach Out</h2>
+                    <p class="lead">Whether you're interested in membership, have questions about our events, or want to learn more about our charitable work, we're here to help.</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">📍</div>
+                            <div class="method-details">
+                                <h4>Visit Us</h4>
+                                <p>123 Fellowship Way<br>Your City, ST 12345</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="method-icon">📞</div>
+                            <div class="method-details">
+                                <h4>Call Us</h4>
+                                <p>(555) 123-4567<br>Mon-Fri, 9AM-5PM</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="method-icon">✉️</div>
+                            <div class="method-details">
+                                <h4>Email Us</h4>
+                                <p>info@cornucopialodge563.org<br>secretary@cornucopialodge563.org</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <h4>Follow Us</h4>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon" aria-label="Facebook">📘</a>
+                            <a href="#" class="social-icon" aria-label="Twitter">🐦</a>
+                            <a href="#" class="social-icon" aria-label="Instagram">📷</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                        <h3>Send Us a Message</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject...</option>
+                                <option value="membership">Membership Inquiry</option>
+                                <option value="events">Event Information</option>
+                                <option value="charity">Charitable Giving</option>
+                                <option value="hall-rental">Hall Rental</option>
+                                <option value="general">General Question</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Tell us how we can help you..."></textarea>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="newsletter">
+                                <span class="checkmark"></span>
+                                Sign me up for the monthly newsletter
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="map-placeholder">
+            <div class="map-content">
+                <span class="map-icon">🗺️</span>
+                <p>Interactive Map</p>
+                <p class="map-note">Add your Google Maps or Mapbox embed here</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header centered">
+                <span class="section-tag">FAQ</span>
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>How do I become a member?</h4>
+                    <p>Membership begins with an inquiry. Fill out our contact form or attend a social hour to meet our members. We require two members to vouch for you, and you'll go through an interview process before being voted on by the lodge.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Can I rent the lodge hall for an event?</h4>
+                    <p>Yes! Our hall is available for rent to members and the community. It accommodates up to 150 guests and includes tables, chairs, and a kitchen. Contact us for availability and pricing.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Are women allowed to join?</h4>
+                    <p>Cornucopia Lodge 563 is a men's fraternal organization. However, we have many events that are open to families and the wider community. We also support and collaborate with women's auxiliary organizations.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Do I need to know someone to join?</h4>
+                    <p>While having a member recommend you is helpful, it's not required. Attend one of our public events or social hours to meet members who can guide you through the process.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What are the membership dues?</h4>
+                    <p>Annual dues vary based on membership type and are kept affordable to ensure accessibility. We also offer discounted rates for young members under 30 and those experiencing financial hardship.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>How can I donate to your charitable work?</h4>
+                    <p>Donations to the Cornucopia Foundation can be made via check, credit card, or through our online portal. All donations are tax-deductible. Contact us for more information about planned giving and sponsorship opportunities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon">🌾</span>
+                        <span class="logo-text">Cornucopia Lodge 563</span>
+                    </div>
+                    <p>A fraternal organization dedicated to fellowship, charity, and community service since 1923.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p>123 Fellowship Way<br>Your City, ST 12345</p>
+                    <p>📞 (555) 123-4567<br>✉️ info@cornucopialodge563.org</p>
+                </div>
+                <div class="footer-hours">
+                    <h4>Lodge Hours</h4>
+                    <p>Tuesday: 7:00 PM - Stated Meeting<br>Thursday: 6:00 PM - Social Hour<br>Saturday: 10:00 AM - Community Events</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Cornucopia Lodge 563. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
